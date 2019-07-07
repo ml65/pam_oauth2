@@ -1,6 +1,6 @@
 auth	required	pam_oauth2.so	token-url=https://auth.sberbank-service.ru/v1.2/access_token introspection-url=https://auth.sberbank-service.ru/v1.2/infowp revoke-url=https://auth.sberbank-service.ru/v1.2/revoke client-username=ssh_rabbit client-password=ssh_rabbit username=user_login realname=first_name auth-password scope=0801_rabbit 
-#auth	optional	pam_exec.so seteuid log=/tmp/test_pam_foo.log /usr/local/bin/env.sh
+auth	optional	pam_exec.so seteuid /usr/local/bin/pam_util.pl
 account	required	pam_oauth2.so	introspection-url=https://auth.sberbank-service.ru/v1.2/infowp revoke-url=https://auth.sberbank-service.ru/v1.2/revoke client-username=ssh_rabbit client-password=ssh_rabbit client-password=ssh_rabbit username=user_login realname=first_name auth-password scope=0801_rabbit 
+session	required	pam_mkhomedir.so skel=/etc/skel/ umask=0022
 session	required	pam_oauth2.so	token-url=https://auth.sberbank-service.ru/v1.2/access_token client-username=ssh_rabbit client-password=ssh_rabbit
-
-
+
