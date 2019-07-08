@@ -16,7 +16,7 @@ revocation-endpoint.
 
 ## Requirements
 
-*  [Linux-Pam](http://www.linux-pam.org/)
+*  sudo apt-get install libcurl4-openssl-dev libpam-dev
 *  [cURL](https://curl.haxx.se/)
 *  [json-parser](https://github.com/udp/json-parser)
 
